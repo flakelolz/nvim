@@ -3,28 +3,28 @@
 -- Add any additional autocmds here
 
 -- Disable lsp semantic tokens for highlighting
--- vim.api.nvim_create_autocmd("LspAttach", {
---   callback = function(args)
---     local client = vim.lsp.get_client_by_id(args.data.client_id)
---     if client then
---       client.server_capabilities.semanticTokensProvider = nil
---     end
---   end,
--- })
-
--- Disable lsp semantic tokens for rust only
-vim.api.nvim_create_autocmd({ "LspAttach" }, {
-  desc = "Disable semantic tokens for rust",
-  group = vim.api.nvim_create_augroup("disable-rustacean-colors", { clear = true }),
-  callback = function(opts)
-    if vim.bo[opts.buf].filetype == "rust" then
-      local client = vim.lsp.get_client_by_id(opts.data.client_id)
-      if client then
-        client.server_capabilities.semanticTokensProvider = nil
-      end
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client then
+      client.server_capabilities.semanticTokensProvider = nil
     end
   end,
 })
+
+-- Disable lsp semantic tokens for rust only
+-- vim.api.nvim_create_autocmd({ "LspAttach" }, {
+--   desc = "Disable semantic tokens for rust",
+--   group = vim.api.nvim_create_augroup("disable-rustacean-colors", { clear = true }),
+--   callback = function(opts)
+--     if vim.bo[opts.buf].filetype == "rust" then
+--       local client = vim.lsp.get_client_by_id(opts.data.client_id)
+--       if client then
+--         client.server_capabilities.semanticTokensProvider = nil
+--       end
+--     end
+--   end,
+-- })
 
 -- disable colorcolumn for all filetypes
 vim.cmd([[autocmd FileType * set colorcolumn=0]])
