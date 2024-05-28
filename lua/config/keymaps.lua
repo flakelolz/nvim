@@ -9,5 +9,6 @@ vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Jump Back" })
 vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Jump Forward" })
 -- Leaves cursor at the same location instead of the end of the line
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join next line" })
--- FIX: doesn't work
-vim.keymap.set("n", "<M-/>", "gcc", { desc = "Comment line" })
+-- Comments
+vim.keymap.set("n", "<M-/>", "gcc", { desc = "Comment line", remap = true })
+vim.keymap.set("v", "<M-/>", "gc", { desc = "Comment block", remap = true })
