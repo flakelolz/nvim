@@ -15,6 +15,8 @@ vim.opt.incsearch = true
 -- Disable autoformat on save
 vim.g.autoformat = false
 
+-- Strict type checking for python
+-- vim.g.lazyvim_python_lsp = "basedpyright"
 -- Windows specific
 if vim.fn.has("win32") == 1 then
   -- vim.o.shell = "C:/Program Files/Git/bin/bash.exe"
