@@ -12,3 +12,5 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Join next line" })
 -- Comments
 vim.keymap.set("n", "<M-/>", "gcc", { desc = "Comment line", remap = true })
 vim.keymap.set("v", "<M-/>", "gc", { desc = "Comment block", remap = true })
+-- Paste without copying to yank register
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Better paste" })
