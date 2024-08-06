@@ -19,8 +19,8 @@ vim.g.autoformat = false
 -- vim.g.lazyvim_python_lsp = "basedpyright"
 -- Windows specific
 if vim.fn.has("win32") == 1 then
-  -- vim.o.shell = "C:/Program Files/Git/bin/bash.exe"
-  vim.o.shell = "nu"
+  vim.o.shell = "C:/Program Files/Git/bin/bash.exe"
+  -- vim.o.shell = "nu"
   -- Python
   vim.g.python3_host_prog = "C:/Users/Flake/AppData/Local/Programs/Python/Python312/python.exe"
 end
