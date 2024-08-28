@@ -14,3 +14,5 @@ vim.keymap.set("n", "<M-/>", "gcc", { desc = "Comment line", remap = true })
 vim.keymap.set("v", "<M-/>", "gc", { desc = "Comment block", remap = true })
 -- Paste without copying to yank register
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Better paste" })
+-- inlay end hints
+vim.keymap.set("n", "<leader>uH", function() require("lsp-endhints").toggle() end, { desc = "Toggle end inlay hints" })
