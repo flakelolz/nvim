@@ -14,5 +14,11 @@ vim.keymap.set("n", "<M-/>", "gcc", { desc = "Comment line", remap = true })
 vim.keymap.set("v", "<M-/>", "gc", { desc = "Comment block", remap = true })
 -- Paste without copying to yank register
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Better paste" })
--- inlay end hints
+-- Inlay end hints
 vim.keymap.set("n", "<leader>uH", function() require("lsp-endhints").toggle() end, { desc = "Toggle end inlay hints" })
+-- Command runner
+vim.keymap.set("n", "<leader>rs", "<cmd>CommandRunnerSet<cr>", { desc = "Set commands" })
+vim.keymap.set("n", "<leader>ra", "<cmd>CommandRunnerRunAll<cr>", { desc = "Run all commands" })
+vim.keymap.set("n", "<leader>r1", "<cmd>CommandRunnerRun 1<cr>", { desc = "Run command 1" })
+vim.keymap.set("n", "<leader>r2", "<cmd>CommandRunnerRun 1<cr>", { desc = "Run command 2" })
+vim.keymap.set("n", "<leader>r3", "<cmd>CommandRunnerRun 1<cr>", { desc = "Run command 3" })
