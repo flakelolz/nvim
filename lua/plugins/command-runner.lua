@@ -1,6 +1,7 @@
 return {
   {
     "marzeq/command-runner.nvim",
+    event = "BufEnter",
     -- these are the default options, you don't need to include them if you don't want to change them
     opts = {
       -- When running all commands, run the next command even if the previous one failed
