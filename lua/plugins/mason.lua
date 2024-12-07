@@ -9,5 +9,8 @@ return {
       -- "ruff",
       -- "sqlfmt",
     })
+    opts.ui = {
+      border = "rounded",
+    }
   end,
 }

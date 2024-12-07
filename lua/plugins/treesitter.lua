@@ -12,6 +12,7 @@ return {
       end,
     }
     vim.list_extend(opts.ensure_installed, {
+      "glsl",
       -- "sql",
       -- "htmldjango",
       -- "gdscript",
