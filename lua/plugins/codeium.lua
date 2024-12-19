@@ -1,6 +1,7 @@
 return {
   {
     "Exafunction/codeium.vim",
+    enabled = false,
     event = "BufEnter",
     version = "1.8.37",
     config = function()
