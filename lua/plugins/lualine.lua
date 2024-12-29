@@ -42,18 +42,18 @@ return {
         {
           function() return require("noice").api.status.mode.get() end,
           cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          color = Util.ui.fg("Constant"),
+          -- color = Util.ui.fg("Constant"),
         },
         -- stylua: ignore
         {
           function() return "  " .. require("dap").status() end,
           cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-          color = Util.ui.fg("Debug"),
+          -- color = Util.ui.fg("Debug"),
         },
           {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
-            color = Util.ui.fg("Special"),
+            -- color = Util.ui.fg("Special"),
           },
           {
             "diff",
@@ -77,7 +77,9 @@ return {
             -- Lsp server name .
             function()
               local msg = "No Active Lsp"
+              ---@diagnostic disable-next-line: deprecated
               local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+              ---@diagnostic disable-next-line: deprecated
               local clients = vim.lsp.get_active_clients()
 
               if next(clients) == nil then
