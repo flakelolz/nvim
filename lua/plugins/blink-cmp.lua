@@ -1,17 +1,11 @@
 return {
   "Saghen/blink.cmp",
   opts = {
-    -- window = {
-    --   border = "rounded",
-    -- },
-    -- menu = {
-    --   border = "rounded",
-    -- },
-    -- documentation = {
-    --   window = {
-    --     border = "rounded",
-    --   },
-    -- },
+    completion = {
+      menu = { border = "rounded" },
+      documentation = { window = { border = "rounded" } },
+    },
+    signature = { window = { border = "rounded" } },
     keymap = {
       ["<C-Space>"] = {},
       preset = "default",
