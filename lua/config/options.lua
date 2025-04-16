@@ -10,8 +10,9 @@ vim.opt.incsearch = true
 vim.g.autoformat = false
 
 -- Windows specific
-if vim.fn.has("win32") == 1 then
+if vim.fn.has("win32") then
+  -- Shell for floating terminal
   vim.o.shell = "nu"
-  -- Python
+  -- Python location
   vim.g.python3_host_prog = "C:/Users/Flake/AppData/Local/Programs/Python/Python312/python.exe"
 end
