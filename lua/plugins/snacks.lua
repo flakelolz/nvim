@@ -13,7 +13,7 @@ return {
     },
     picker = {
       sources = {
-        explorer = { hidden = true, layout = { layout = { width = 30 } } },
+        explorer = { hidden = true, layout = { layout = { width = 32 } } },
       },
     },
   },
