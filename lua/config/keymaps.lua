@@ -25,9 +25,9 @@ vim.keymap.del("t", "<C-_>")
 
 -- Remap floating terminal
 -- stylua: ignore
-vim.keymap.set("n", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("n", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
 -- stylua: ignore
-vim.keymap.set("t", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("t", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
 
 -- Comments - Because of how a terminal might be sending the input, need both / and _ keymaps
 vim.keymap.set("n", "<C-/>", "gcc", { desc = "Comment line", remap = true })
@@ -37,7 +37,7 @@ vim.keymap.set("v", "<C-/>", "gc", { desc = "Comment block", remap = true })
 vim.keymap.set("v", "<C-_>", "gc", { desc = "which_key_ignore", remap = true })
 
 -- Send highlighted text to void register before pasting
-vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Void paste" })
+vim.keymap.set({ "x", "v" }, "<leader>p", '"_dP', { desc = "Void paste" })
 -- Delete text and send to void register
 vim.keymap.set({ "n", "v", "x" }, "<M-d>", '"_d', { desc = "Void delete" })
 
