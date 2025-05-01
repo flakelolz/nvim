@@ -5,7 +5,7 @@ return {
       menu = { border = "rounded" },
       documentation = { window = { border = "rounded" } },
     },
-    signature = { window = { border = "rounded" } },
+    signature = { enabled = true, window = { border = "rounded" } },
     keymap = {
       ["<C-Space>"] = {},
       preset = "default",
