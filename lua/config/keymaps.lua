@@ -25,9 +25,9 @@ vim.keymap.del("t", "<C-_>")
 
 -- Remap floating terminal
 -- stylua: ignore
-vim.keymap.set("n", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
+vim.keymap.set("n", "<S-Tab>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
 -- stylua: ignore
-vim.keymap.set("t", "<M-;>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
+vim.keymap.set("t", "<S-Tab>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)", remap = true })
 
 -- Comments - Because of how a terminal might be sending the input, need both / and _ keymaps
 vim.keymap.set("n", "<C-/>", "gcc", { desc = "Comment line", remap = true })
@@ -43,3 +43,6 @@ vim.keymap.set({ "n", "v", "x" }, "<M-d>", '"_d', { desc = "Void delete" })
 
 -- Make C-c same as Esc
 vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- Delete a word with C-Backspace in insert mode
+vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })

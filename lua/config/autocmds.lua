@@ -34,6 +34,13 @@ vim.cmd([[autocmd FileType norg set tw=99 colorcolumn=100]])
 -- stop auto commenting on new line
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.wgsl",
+  callback = function()
+    vim.bo.filetype = "wgsl_bevy"
+  end,
+})
+
 -- gdscript indentation
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gd", "gdscript", "gdscript3" },
@@ -46,8 +53,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- c indentation
-vim.cmd([[autocmd FileType c set shiftwidth=4]])
+-- C/C++ indentation
+vim.cmd([[autocmd FileType c,cpp set shiftwidth=4]])
 
 -- ZMK keymap
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {

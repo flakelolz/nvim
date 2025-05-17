@@ -1,8 +1,8 @@
 return {
   "folke/snacks.nvim",
-  ---@type snacks.Config
   opts = {
     scroll = {
+      -- Disable smooth scrolling effect that's applied by default for some reason
       enabled = false,
     },
     terminal = {
@@ -12,8 +12,13 @@ return {
       },
     },
     picker = {
+      layout = { preset = "vertical", cycle = false, layout = { width = 128 } },
       sources = {
-        explorer = { hidden = true, layout = { layout = { width = 32 } } },
+        files = { hidden = true, ignored = false },
+        grep = { hidden = true, ignored = false },
+        explorer = { hidden = true, ignored = true, layout = { layout = { width = 32 } } },
+        -- stylua: ignore
+        buffers = { on_show = function() vim.cmd.stopinsert() end },
       },
     },
   },
